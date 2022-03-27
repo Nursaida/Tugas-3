@@ -1,0 +1,82 @@
+#Kasus Barang pada List
+barang = ["buku","pulpen","pensil","penghapus"]
+
+def tambah():
+  tambah_barang = input ("Masukkan nama barang yang akan di tambahkan:")
+  barang.append(tambah_barang)
+  print("Hasil setelah barang baru di tambahkan",barang)
+
+def menghapus():
+  print("List barang sekarang",barang)
+
+  hapus_barang = input ("Masukkan nama barang yang akan di hapus:")
+
+  if(hapus_barang in barang):
+    barang.remove(hapus_barang)
+    print("Hasil setelah di hapus",barang)
+
+def mengedit():
+  edit = input ("Masukkan nama barang baru:")
+  barang[0]=edit
+  print("Hasil setelah di edit",barang)
+
+def menampilkan():
+  print("list semua barang lagi")
+
+  for i in barang:
+    print(i)
+
+def mengecek():
+  print("list semua barang")
+
+  for i in barang:
+    print(i)
+
+  cek_barang= input ("Masukkan nama barang yang mau di cek:")
+
+  if(cek_barang in barang):
+    print("Nama barang sudah ada dalam list")
+
+  else:
+    print("Nama barang tidak ada dalam list")
+
+def menampilkan_indeks():
+  cek_indeks = input ("Masukkan nama barang:")
+
+  if(cek_indeks in barang):
+    for i in range (len(barang)):
+      if(cek_indeks == barang [i]):
+         print("indeks nama barang adalah:",i)
+
+  else:
+    print("Nama barang tidak ada pada list")
+
+
+
+
+def menu():
+  while True:
+    print("1.Tambah Barang,")
+    print("2. Menghapus Barang,")
+    print("3. Mengedit Barang,")
+    print("4. Menampilkan Barang,")
+    print("5. Mengecek Barang,")
+    print("6. Menampilkan indeks,")
+
+
+    pilihan= int (input("Pilih Menu "))
+
+    if(pilihan == 1):
+      tambah()
+    elif(pilihan == 2):
+      menghapus()
+    elif(pilihan == 3):
+      mengedit()
+    elif(pilihan == 4):
+      menampilkan()
+    elif(pilihan == 5):
+      mengecek()
+    elif(pilihan == 6):
+      menampilkan_indeks()
+
+menu()
